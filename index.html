@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Archive | Gallery Aku dan Dia</title>
+    <link rel="icon" type="image/png" href="img/timika_papua.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="material-symbols-outlined">auto_awesome_motion</span>
+            <span>MyGallery</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button onclick="toggleTheme()" class="icon-btn">
+                <span id="theme-icon" class="material-symbols-outlined">dark_mode</span>
+            </button>
+            <button class="menu-toggle icon-btn" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Precious Moments</h1>
+            <p>Kumpulan kenangan aku dan dia dalam bentuk visual yang estetik.</p>
+            <a href="#gallery" class="btn">Lihat Galeri</a>
+        </div>
+    </header>
+
+    <main id="gallery" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Koleksi Terbaru</h2> <br>
+            <p class="section-subtitle">Geser ke samping untuk melihat lebih banyak</p>
+            
+            <div class="filter-wrapper">
+                <button class="filter-btn active" onclick="filterMedia('all', event)">Semua</button>
+                <button class="filter-btn" onclick="filterMedia('img', event)">Foto</button>
+                <button class="filter-btn" onclick="filterMedia('video', event)">Video</button>
+                            </div>
+        </div>
+        
+        <div id="gallery-container" class="media-slider">
+            </div>
+    </main>
+
+    <!-- COPYRIGHT -->
+    <footer>
+      <small>
+        <p>&#169; <span id="year"></span> <strong>MyGallery</strong>. All Rights Reserved. Dibuat dengan ❤️ oleh Bryan Tuakora.</p>
+        </small>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content" id="lightbox-content" onclick="event.stopPropagation()"></div>
+    </div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
