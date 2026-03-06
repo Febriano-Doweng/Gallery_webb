@@ -91,33 +91,22 @@ index.html
 Website akan langsung tampil di browser.
 
 💡 Fitur Website
-
 Beberapa fitur yang terdapat pada website ini antara lain:
 
-Tampilan halaman web sederhana
-
-Layout halaman yang rapi
-
-Navigasi halaman
-
-Interaksi sederhana menggunakan JavaScript
-
-Struktur kode yang mudah dipahami
-dipahami
+1. Tampilan halaman web sederhana
+2. Layout halaman yang rapi
+3. Navigasi halaman
+4. Interaksi sederhana menggunakan JavaScript
+5. Struktur kode yang mudah dipahami
 
 🚀 Pengembangan Selanjutnya
-
 Beberapa pengembangan yang dapat dilakukan pada proyek ini:
 
-Menambahkan responsive design
-
-Menambahkan animasi modern
-
-Mengintegrasikan framework CSS (Tailwind / Bootstrap)
-
-Menggunakan framework JavaScript (React / Vue)
-
-Menambahkan backend API
+1. Menambahkan responsive design
+2. Menambahkan animasi modern
+3. Mengintegrasikan framework CSS (Tailwind / Bootstrap)
+4. Menggunakan framework JavaScript (React / Vue)
+5. Menambahkan backend API
 
 👨‍💻 Author
 
