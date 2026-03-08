@@ -67,7 +67,7 @@ body:not(.dark-mode) .media-card {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3enV4eXhsdTV0dThoOWFqYTRvd2M4emEzMDJvaHRrN2E4amplYW83dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WeyqDp1shHe7u/giphy.gif') center/cover fixed;
+                url('img/one_piece.jpg') center/cover fixed;
     display: flex; align-items: center; justify-content: center; text-align: center; color: white;
 }
 .hero-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
@@ -150,3 +150,4 @@ footer { padding: 40px; text-align: center; background: var(--bg); border-top: 1
     filter: brightness(1.1);
 
 }
+
