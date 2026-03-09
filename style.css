@@ -17,7 +17,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('fonts/inter-v12-latin-500.woff2') format('woff2');
+  src: url('fonts/inter-v20-latin-500.woff2') format('woff2');
 }
 
 /* Semi-Bold (600) */
@@ -412,6 +412,7 @@ footer {
     from { opacity: 0; transform: translateY(10px); } 
     to { opacity: 1; transform: translateY(0); } 
 }
+
 
 
 
