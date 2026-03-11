@@ -59,6 +59,7 @@ class="lazy blur"
 data-src="${item.src}"
 muted
 loop
+autoplay
 playsinline
 preload="metadata">
 </video>`}
@@ -241,3 +242,4 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
 
 });
+
