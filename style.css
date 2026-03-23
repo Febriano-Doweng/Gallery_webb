@@ -200,7 +200,7 @@ body.dark-mode #moon-icon { display: none; }
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('img/one_piece.jpg') center/cover no-repeat;
+                url('img/one_piece.webp') center/cover no-repeat;
     display: flex; 
     align-items: center; 
     justify-content: center; 
