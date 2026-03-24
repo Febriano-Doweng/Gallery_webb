@@ -1,0 +1,549 @@
+/* ===============================
+   SELF-HOSTED INTER FONT
+================================= */
+
+/* Regular (400) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* Semi-Bold (600) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-700.woff2') format('woff2');
+}
+
+/* Extra-Bold (800) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-800.woff2') format('woff2');
+}
+
+/* ===============================
+   1. Variabel Warna & Tema
+================================= */
+:root {
+    /* Tema Terang (Default) */
+    --bg: #EEE4E7;
+    --nav-bg: #DEBC6E;
+    --icon: #1A1A1A;
+    --card-bg: #ffffff;
+    --accent: #506CB5;
+    --crimson: #BB353B;
+    --footer: #506CB5;
+    --text-footer: #f1f5f9;
+    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --border-color: #ddd;
+}
+
+body.dark-mode {
+    /* Tema Gelap */
+    --bg: #0f0f0f;
+    --icon: #f1f5f9;
+    --nav-bg: rgba(0, 0, 0, 0.6);
+    --text: #f1f5f9;
+    --footer: rgba(0, 0, 0, 0.6);
+    --text-footer: #f1f5f9;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --shadow: 0 10px 30px rgba(0,0,0,0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===============================
+   2. Reset & Base Styles
+================================= */
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease; 
+}
+
+.container { 
+    padding: 60px 8%; 
+}
+
+/* ===============================
+   3. Navbar & Ikon SVG
+================================= */
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 8%; 
+    background: var(--nav-bg); 
+    backdrop-filter: blur(10px);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    display: flex; /* Menggunakan flexbox */
+    align-items: center; /* Menyejajarkan secara vertikal */
+    text-decoration: none;
+    font-weight: 700; 
+    font-size: 1.3rem; 
+    color: #BB353B;
+}
+
+.logo img {
+    height: 30px; /* Atur tinggi logo sesuai kebutuhan */
+    width: auto; /* Mempertahankan rasio */
+    margin-right: 10px; /* Jarak antara logo dan teks */
+}
+
+/* Konfigurasi Tampilan Logo SVG */
+.logo svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 1rem; 
+}
+
+.nav-links a { 
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  
+    text-decoration: none; 
+    color: #506CB5; 
+    font-weight: 500; 
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { 
+    background-color: #BB353B; 
+    color: #f1f5f9;
+}
+
+.nav-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.icon-btn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: var(--icon); 
+    display: flex;
+    padding: 5px;
+}
+
+/* Styling untuk SVG di dalam tombol */
+.icon-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.icon-btn:hover svg {
+    transform: scale(1.1); /* Efek sedikit membesar saat hover */
+}
+
+/* Logika Visibilitas Ikon Tema */
+/* Default (Light Mode): Tampilkan Bulan, Sembunyikan Matahari */
+#sun-icon { 
+  display: none; 
+  width: 22px;
+  height: 22px;
+}
+
+#moon-icon { 
+  width: 22px;
+  height: 22px;
+  display: block; 
+}
+
+/* Dark Mode: Tampilkan Matahari, Sembunyikan Bulan */
+body.dark-mode #sun-icon { 
+  display: block; 
+}
+
+body.dark-mode #moon-icon { 
+  display: none; 
+}
+
+/* Tombol Menu (Hamburger) - Default Tersembunyi di Desktop */
+.menu-toggle { 
+    display: none; 
+}
+
+/* ===============================
+   4. Hero Section
+================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;   /* 🔥 perkecil gambar */
+    height: auto; /* biar proporsional */
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain; /* penting */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    z-index: 2;
+    height: 100vh;  /* 100vh for full viewport height */
+  /* text-align: center;
+    color: #E9E4E7; */
+}
+
+.hero-content::before {
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+
+    background: url('img/rope.png') repeat-x;
+    background-size: auto 100%;
+
+    pointer-events: none;
+    animation: ropeMove 10s linear infinite; /* animasi */
+}
+
+@keyframes ropeMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+/* ===============================
+   5. Gallery & Cards
+================================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 30px; 
+}
+
+.section-subtitle {
+  text-align: center; 
+  font-size: 0.9rem; 
+  opacity: 0.7; 
+  margin-top: -10px; 
+  margin-bottom: 20px; 
+}
+
+.filter-wrapper { 
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  flex-wrap: wrap; 
+}
+
+.filter-btn {
+    padding: 8px 25px; 
+    border: 2px solid var(--crimson); 
+    background: transparent;
+    color: var(--accent); 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover { 
+    background: var(--accent); 
+    color: #f0f0f0; 
+}
+
+.media-slider {
+    display: flex; 
+    overflow-x: auto; 
+    gap: 25px; 
+    padding: 20px 0 40px 0;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Menghilangkan Tanda Scroll Default */
+.media-slider::-webkit-scrollbar { display: none;
+} /* Chrome, Safari, Edge */
+
+/* TEKS PADA KARTU MEDIA */
+.media-card {
+    flex: 0 0 320px; 
+    background: var(--bg);
+    border: 1px solid var(--accent); /* Menggunakan variabel border */
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: var(--shadow); 
+    cursor: pointer; 
+    scroll-snap-align: center;
+    animation: fadeIn 0.5s ease; 
+    position: relative;
+    transition: transform 0.3s ease;
+    text-transform: capitalize;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+}
+
+.media-wrapper { 
+    position: relative; 
+    height: 210px; 
+    background: #000; 
+    overflow: hidden; 
+}
+
+.media-wrapper img, 
+.media-wrapper video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s, filter 0.4s ease; 
+}
+
+.media-card:hover .media-wrapper img,
+.media-card:hover .media-wrapper video { 
+    transform: scale(1.05); 
+    filter: brightness(1.1);
+}
+
+.date-badge { 
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    background: rgba(0,0,0,0.6); 
+    color: #f0f0f0; 
+    padding: 4px 10px; 
+    border-radius: 10px; 
+    font-size: 0.5rem; 
+    z-index: 2;
+}
+
+/* TEKS DALAM BOX GALLERY */
+.info { 
+  padding: 20px;
+}
+.info h3 { 
+  font-size: 1.1rem;
+  margin-bottom: 5px; 
+}
+.info p { 
+  font-size: 0.85rem; 
+  opacity: 0.7; 
+  line-height: 1.5; 
+}
+
+/* ===============================
+   6. Footer
+================================= */
+footer {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background: var(--footer);
+    color: var(--text-footer);
+
+    border-top: none; /* hapus border biasa */
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* ketebalan tali */
+
+    background: url('img/rope.png') repeat-x;
+    background-size: auto 100%;
+
+    pointer-events: none;
+}
+
+/* ===============================
+   7. Lightbox
+================================= */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.95);
+    z-index: 2000; 
+    align-items: center; 
+    justify-content: center;
+}
+.lightbox-content img, 
+.lightbox-content video { 
+    max-width: 100%; 
+    max-height: 100vh; 
+    border-radius: 5px; 
+}
+.close-lightbox { 
+    position: absolute; 
+    top: 30px; 
+    right: 40px; 
+    color: #f0f0f0; 
+    font-size: 30px; 
+    cursor: pointer; 
+    z-index: 2001;
+}
+
+/* ===============================
+   8. Mobile Responsive
+================================= */
+@media (max-width: 768px) {
+.container { 
+  padding: 40px 5%; 
+}
+
+.hero-content h1 {
+  font-size: 2rem; 
+  }
+
+/* Tampilkan tombol menu di mobile */
+.menu-toggle { 
+  display: flex !important; 
+}
+
+/* Navigasi Links - Dihidden default, tampil saat active */
+.nav-links {
+  display: none; 
+  flex-direction: column; 
+  position: absolute; 
+  top: 70px; 
+  left: 0;
+  width: 100%; 
+  background: var(--bg); 
+  padding: 30px; 
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+    
+.nav-links.active {
+  display: flex; 
+}
+
+/* Ukuran Card Mobile */
+.media-card { 
+  flex: 0 0 85%;
+}
+.media-slider {
+  gap: 1rem; 
+  padding-left: 3%; 
+  padding-right: 3%; 
+  }
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* ===============================
+   Infinite Scroll
+================================= */
+.slide {
+  display: flex;
+  overflow: hidden;
+ /* padding: 15px 0; */
+ /* background: rgba(0, 0, 0, 0.6); */
+  white-space: nowrap;
+  position: relative;
+}
+/* Saat Mouse Berada Diatas Gambar Akan Otomatis Berhenti */
+.slide:hover .track {
+  animation-play-state: paused;
+}
+
+/* Lopping Pada Gambar */
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll linear infinite;
+}
+
+.grup {
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.grup img {
+  height: 50px;
+}
+
+/* pakai variable */
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-1 * var(--width)));
+  }
+}
