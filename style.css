@@ -38,15 +38,6 @@
   src: url('fonts/inter-v20-latin-700.woff2') format('woff2');
 }
 
-/* Extra-Bold (800) */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('fonts/inter-v20-latin-800.woff2') format('woff2');
-}
-
 /* ===============================
    1. Variabel Warna & Tema
 ================================= */
@@ -257,7 +248,7 @@ body.dark-mode #moon-icon { display: none; }
     left: 0;
     width: 100%;
     height: 35px;
-    background: url('img/rope.png') repeat-x;
+    background: url('img/rope.webp') repeat-x;
     background-size: auto 100%;
     filter: drop-shadow(0 0 6px #DEBC6E);
     pointer-events: none;
@@ -294,7 +285,7 @@ body.dark-mode #moon-icon { display: none; }
 /* Judul h1 */
 .hero-title {
     font-size: 2.2rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.2;
 }
@@ -482,7 +473,7 @@ body.dark-mode #moon-icon { display: none; }
     left: 0;
     width: 100%;
     height: 25px;
-    background: url('img/rope.png') repeat-x;
+    background: url('img/rope.webp') repeat-x;
     background-size: auto 100%;
     filter: drop-shadow(0 0 6px #DEBC6E);
     pointer-events: none;
@@ -647,4 +638,4 @@ footer::before {
 @keyframes moveStars {
     from { transform: translateY(0); }
     to { transform: translateY(-100px); }
-}
+   }
