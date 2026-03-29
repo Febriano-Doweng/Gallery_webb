@@ -1,0 +1,641 @@
+/* ===============================
+   INTER FONT
+================================= */
+
+/* Regular (400) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* Semi-Bold (600) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/inter-v20-latin-700.woff2') format('woff2');
+}
+
+/* ===============================
+   1. Variabel Warna & Tema
+================================= */
+:root {
+    --bg: #F5F5F5;
+    --nav-bg: #DEBC6E;
+    --icon: #1A1A1A;
+    --card-bg: #FFFFFF;
+    --accent: #BB353B;
+    --crimson: #BB353B;
+    --footer: #506CB5;
+    --text: #1a1a1a;
+    --hover: #506CB5;
+    --text-footer: #f1f5f9;
+    --shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+    --border-color: #ddd;
+}
+
+body.dark-mode {
+    --bg: #0f0f0f;
+    --icon: #f1f5f9;
+    --nav-bg: rgba(0, 0, 0, 0.6);
+    --text: #f1f5f9;
+    --accent: #506CB5;
+    --footer: rgba(0, 0, 0, 0.6);
+    --text-footer: #f1f5f9;
+    --hover: #BB353B;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --shadow: 3px 5px 5px rgba(0,0,0,0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===============================
+   2. Reset & Base Styles
+================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease; 
+}
+
+/* MOBILE DEFAULT */
+.container { 
+    padding: 40px 5%; 
+}
+
+/* ===============================
+   3. Navbar & Ikon SVG
+================================= */
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 5%; 
+    background: var(--nav-bg); 
+    backdrop-filter: blur(10px);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    color: #BB353B;
+}
+
+.logo img {
+    height: 28px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.logo svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+.nav-links { 
+    display: none;
+    list-style: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.nav-links.active { 
+    display: flex; 
+}
+
+.nav-links a { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none; 
+    color: #FFFFFF; 
+    background-color: var(--accent);
+    margin: 0.5rem 2rem;
+    font-weight: 500; 
+    border-radius: 1.5rem;
+    border: 2px solid #DEBC6E; 
+}
+
+.nav-links a:hover { 
+    background-color: var(--hover); 
+    color: #f1f5f9;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.icon-btn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: var(--icon); 
+    display: flex;
+    padding: 5px;
+}
+
+.icon-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.icon-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* THEME ICON */
+#sun-icon { display: none; width: 22px; height: 22px; }
+#moon-icon { display: block; width: 22px; height: 22px; }
+
+body.dark-mode #sun-icon { display: block; }
+body.dark-mode #moon-icon { display: none; }
+
+.menu-toggle { 
+    display: flex; 
+}
+
+/* ===============================
+   4. Hero Section
+================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Gambar pada hero section */
+.hero-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 0;
+}
+
+/* gambar tali */
+.hero::before {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: url('img/rope.webp') repeat-x;
+    background-size: auto 100%;
+    filter: drop-shadow(0 0 6px #DEBC6E);
+    pointer-events: none;
+    animation: ropeMove 10s linear infinite;
+    z-index: 2;
+}
+
+@keyframes ropeMove {
+    from { background-position: 0 0; }
+    to { background-position: 200px 0; }
+}
+
+
+/* Overlay cinematic */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.85));
+    z-index: 1;
+}
+
+/* Konten Hero (teks) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 20px;
+    animation: heroFade 1.5s ease;
+}
+
+/* Judul h1 */
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* Glow effect */
+.hero-title span {
+    color: #BB353B;
+    text-shadow: 
+        3px 5px 5px rgba(0,0,0,0.5);
+}
+
+/* Subtitle */
+.hero-subtitle {
+    margin-top: 12px;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* Button Container */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+/* Button */
+.btn-primary {
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(45deg, #BB353B, #DEBC6E);
+    color: white;
+    box-shadow: 0 0 15px rgba(187,53,59,0.6);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 25px rgba(187,53,59,1);
+}
+
+/* Animasi masuk */
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   5. Gallery & Cards
+================================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 30px; 
+}
+
+.section-subtitle {
+  text-align: center; 
+  font-size: 0.9rem; 
+  opacity: 0.7; 
+  margin-top: -10px; 
+  margin-bottom: 20px; 
+}
+
+.filter-wrapper { 
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+}
+
+.filter-btn {
+    padding: 8px 20px; 
+    border: 2px solid #DEBC6E; 
+    background: transparent;
+    color: var(--accent); 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover { 
+    background: var(--accent); 
+    color: #f0f0f0; 
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.media-slider {
+    display: flex; 
+    overflow-x: auto; 
+    gap: 1rem; 
+    padding: 20px 3% 40px;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none;
+}
+
+.media-slider::-webkit-scrollbar { display: none; }
+
+.media-card {
+    flex: 0 0 85%; 
+    background: var(--bg);
+    border: 2px solid var(--border-color);
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: var(--shadow); 
+    cursor: pointer; 
+    scroll-snap-align: center;
+    animation: fadeIn 0.5s ease; 
+    position: relative;
+    transition: transform 0.3s ease;
+    text-transform: capitalize;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow); 
+}
+
+.media-wrapper { 
+    position: relative; 
+    height: 210px; 
+    background: #000; 
+    overflow: hidden; 
+}
+
+.media-wrapper img, 
+.media-wrapper video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s, filter 0.4s ease; 
+}
+
+.media-card:hover .media-wrapper img,
+.media-card:hover .media-wrapper video { 
+    transform: scale(1.05); 
+    filter: brightness(1.1);
+}
+
+.date-badge { 
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    background: rgba(0,0,0,0.6); 
+    color: #f0f0f0; 
+    padding: 4px 10px; 
+    border-radius: 10px; 
+    font-size: 0.5rem; 
+    z-index: 2;
+}
+
+.info { padding: 20px; }
+.info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.info p { font-size: 0.85rem; opacity: 0.7; line-height: 1.5; }
+
+/* ===============================
+   6. Footer
+================================= */
+.footer-content {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background: var(--footer);
+    color: var(--text-footer);
+}
+
+.footer-content::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: url('img/rope.webp') repeat-x;
+    background-size: auto 100%;
+    filter: drop-shadow(0 0 6px #DEBC6E);
+    pointer-events: none;
+}
+
+/* ===============================
+   7. Lightbox
+================================= */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.95);
+    z-index: 2000; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.lightbox-content img, 
+.lightbox-content video { 
+    max-width: 100%; 
+    max-height: 100vh; 
+    border-radius: 5px; 
+}
+
+.close-lightbox { 
+    position: absolute; 
+    top: 30px; 
+    right: 40px; 
+    color: #f0f0f0; 
+    font-size: 30px; 
+    cursor: pointer; 
+    z-index: 2001;
+}
+
+/* ===============================
+   8. Animations
+================================= */
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* ===============================
+   9. Infinite Scroll
+================================= */
+.slide {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.slide:hover .track {
+  animation-play-state: paused;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll linear infinite;
+}
+
+.grup {
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.grup img {
+  height: 50px;
+  filter: drop-shadow(3px 5px 3px rgba(0,0,0,0.5));
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-1 * var(--width)));
+  }
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (min-width: 768px) {
+
+.container { 
+  padding: 50px 6%; 
+}
+
+.menu-toggle { 
+  display: none; 
+}
+
+/* .nav-links {
+  display: flex;
+  position: static;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  gap: 1.5rem;
+} */
+
+.media-card { 
+  flex: 0 0 45%;
+}
+
+.hero-img {
+    width: 80%;
+    height: 100vh;
+    padding: 40px;
+  }
+  
+}
+
+/* ===============================
+   DESKTOP
+================================= */
+@media (min-width: 1024px) {
+
+.container { 
+  padding: 60px 8%; 
+}
+
+.navbar { 
+  padding: 1rem 8%; 
+}
+
+.media-card {
+  flex: 0 0 320px;
+}
+
+.hero-img {
+    width: 50%;
+    padding: 50px;
+}
+
+footer::before { 
+  height: 30px;
+  }
+
+}
+
+/* ===============================
+   PARTICLE BACKGROUND
+================================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+    animation: moveStars 60s linear infinite;
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
