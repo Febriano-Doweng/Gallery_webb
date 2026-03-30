@@ -1,6 +1,6 @@
-# 📌 Project-Webb
+# 📌 Gallery_Webb
 
-Project-Webb merupakan sebuah proyek **website berbasis web statis** yang dikembangkan menggunakan teknologi dasar pengembangan web yaitu **HTML, CSS, dan JavaScript**. Proyek ini bertujuan untuk menampilkan sebuah halaman web dengan tampilan yang sederhana namun responsif sebagai latihan pengembangan front-end.
+Gallery_Webb merupakan sebuah proyek **website berbasis web statis** yang dikembangkan menggunakan teknologi dasar pengembangan web yaitu **HTML, CSS, dan JavaScript**. Proyek ini bertujuan untuk menampilkan sebuah halaman web dengan tampilan yang sederhana namun responsif sebagai latihan pengembangan front-end.
 
 Repository ini menyimpan seluruh source code yang digunakan untuk membangun tampilan website serta struktur halaman yang dapat dijalankan langsung melalui browser.
 
@@ -8,7 +8,7 @@ Repository ini menyimpan seluruh source code yang digunakan untuk membangun tamp
 
 # 🎯 Tujuan Proyek
 
-Tujuan utama dari pengembangan Project-Webb adalah:
+Tujuan utama dari pengembangan Gallery_Webb adalah:
 
 - Melatih kemampuan **pengembangan website front-end**
 - Memahami struktur dasar **HTML, CSS, dan JavaScript**
@@ -56,7 +56,7 @@ Project-Webb
 ├── script.js
 └── assets
 ├── images
-└── icons
+└── fonts
 
 
 Penjelasan:
@@ -77,10 +77,10 @@ Untuk menjalankan website ini cukup mudah:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/Febriano-Doweng/Project-Webb.git
+git clone https://github.com/Febriano-Doweng/Gallery_Webb.git
 
 ###2. Masuk ke Folder Project
-cd Project-Webb
+cd Gallery_Webb
 
 ###3. Jalankan Website
 
